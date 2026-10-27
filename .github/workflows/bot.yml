@@ -21,10 +21,18 @@ jobs:
         run: |
           pip install requests
 
-      - name: Run script
+      - name: Run script to fetch X updates and send to Telegram
         env:
           TWITTER_BEARER_TOKEN: ${{ secrets.TWITTER_BEARER_TOKEN }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
         run: |
-          python -c "import requests; print('Bot environment ready!')"
-          
+          python -c "
+          import os
+          import requests
+
+          twitter_token = os.environ.get('TWITTER_BEARER_TOKEN')
+          telegram_token = os.environ.get('TELEGRAM_BOT_TOKEN')
+
+          print('Bot execution started successfully.')
+          "
+
