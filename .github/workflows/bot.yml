@@ -2,7 +2,7 @@ name: X to Telegram Bot
 
 on:
   schedule:
-    - cron: '*/30 * * * *'
+    - cron: '*/5 * * * *'
   workflow_dispatch:
 
 jobs:
@@ -35,4 +35,3 @@ jobs:
 
           print('Bot execution started successfully.')
           "
-
